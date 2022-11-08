@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.belajarmvvm.model.Student
 
 class DetailViewModel: ViewModel() {
+
     val studentLiveData = MutableLiveData<Student>()
 
     fun fetch() {
