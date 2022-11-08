@@ -31,6 +31,15 @@ class StudentListFragment : ListFragment() {
         recView.adapter = adapter
 
         observeViewModel()
+
+        refreshLayout.setOnRefreshListener {
+            recView.visibility = View.GONE
+            txtError.visibility = View.GONE
+            progressLoad.visibility = View.VISIBLE
+
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+        }
     }
 
     private fun observeViewModel() {
